@@ -1,0 +1,230 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  /* Fundo em degradê suave e claro */
+  background: linear-gradient(135deg, #fff0f3 0%, #ffe3e8 50%, #fcd5ce 100%);
+  color: #4a2e35;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Canvas do fundo */
+#heartCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Container Principal */
+.container {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 450px;
+  width: 90%;
+  padding: 20px;
+}
+
+/* Etiqueta topo */
+.badge {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #e63946;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 6px 16px;
+  border-radius: 50px;
+  border: 1px solid rgba(230, 57, 70, 0.2);
+  margin-bottom: 25px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+/* Coração Central */
+.heart-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0 25px 0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.heart-container:hover {
+  transform: scale(1.05);
+}
+
+.heart-svg {
+  width: 250px;
+  height: 250px;
+  fill: #e63946;
+  animation: heartBeat 1.5s infinite ease-in-out;
+  filter: drop-shadow(0 8px 20px rgba(230, 57, 70, 0.25));
+}
+
+@keyframes heartBeat {
+  0% { transform: scale(1); }
+  14% { transform: scale(1.1); }
+  28% { transform: scale(0.98); }
+  42% { transform: scale(1.15); }
+  70% { transform: scale(1); }
+  100% { transform: scale(1); }
+}
+
+/* Nome dentro do Coração */
+.heart-name {
+  position: absolute;
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.5rem;
+  color: #ffffff;
+  font-weight: bold;
+  transform: rotate(-6deg);
+  pointer-events: none;
+  user-select: none;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Textos da tela */
+.message-group {
+  margin-bottom: 25px;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #5c3d46;
+  margin-bottom: 8px;
+}
+
+.love-text {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.6rem;
+  color: #e63946;
+  font-weight: bold;
+}
+
+/*Botão principal */
+.btn-primary {
+  background: #e63946;
+  color: #ffffff;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(230, 57, 70, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #d62828;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(230, 57, 70, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 50;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Modal Card */
+.modal-card {
+  background: #ffffff;
+  max-width: 360px;
+  width: 100%;
+  border-radius: 24px;
+  padding: 28px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-card {
+  transform: scale(1);
+}
+
+.modal-icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 15px auto;
+  border-radius: 50%;
+  background: #fff0f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.modal-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.2rem;
+  color: #e63946;
+  margin-bottom: 12px;
+}
+
+.modal-text {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 22px;
+  font-weight: 300;
+}
+
+.btn-close {
+  width: 100%;
+  background: #e63946;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-close:hover {
+  background: #d62828;
+}

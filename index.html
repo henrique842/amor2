@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Pietra ❤️</title>
+  
+  <!-- Fontes do Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Canvas para os corações flutuando suavemente-->
+  <canvas id="heartCanvas"></canvas>
+
+  <!-- Conteúdo Principal -->
+  <main class="container">
+    
+    <span class="badge">Uma mensagem especial para alegra o seu dia ❤️✨❤️</span>
+        <p>Agora você pensa seu Home e foda para carai kkkk</p>
+    <!-- Coração Central com o nome Pietra -->
+    <div class="heart-container" id="mainHeart">
+      <svg class="heart-svg" viewBox="0 0 24 24">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+      </svg>
+      <span class="heart-name">Pietra amor da minha vida</span>
+    </div>
+
+    <!-- Frase simples -->
+    <div class="message-group">
+      <p class="subtitle">Você é a pessoa mais especial da minha vida. você alegra meus dias sabia minha linda?</p>
+      <p class="love-text">Te amo muito muito até o infinito! ❤️</p>
+    </div>
+
+    <!-- Botão -->
+    <button id="openNoteBtn" class="btn-primary">
+      Clique aqui ✨
+    </button>
+
+  </main>
+
+  <!-- Pop-up Modal -->
+  <div id="noteModal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-icon">❤️</div>
+      <h3 class="modal-title">Meu Recado Para Você</h3>
+      <p class="modal-text">
+        Cada momento ao seu lado é um presente. Obrigado por trazer tanto brilho, carinho e alegria para os meus dias, Vida!você e meu porto seguro amor eu amo ter vc na minha vida.
+      </p>
+      <button id="closeNoteBtn" class="btn-close">Fechar com Carinho</button>
+    </div>
+  </div>
+
+  <!-- Script JS -->
+  <script src="script.js"></script>
+</body>
+</html>
